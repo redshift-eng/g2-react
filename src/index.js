@@ -42,14 +42,14 @@ export default function createG2(__operation) {
     }
 
     initChart(props) {
-      const { width, height, data, plotCfg, forceFit } = props;
+      const { width, height, data, defs, plotCfg, forceFit } = props;
       const chart = new G2.Chart({
         id: this.chartId,
         width, height,
         plotCfg,
         forceFit,
       });
-      chart.source(data);
+      chart.source(data, defs);
       __operation(chart);
       this.chart = chart;
     }
